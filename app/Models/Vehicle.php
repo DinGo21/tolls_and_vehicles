@@ -12,8 +12,8 @@ class Vehicle extends Model
         "registration"
     ];
 
-    public function toll()
+    public function tolls()
     {
-        return $this->belongsTo(Toll::class);
+        return $this->belongsToMany(Toll::class, "toll_vehicle");
     }
 }

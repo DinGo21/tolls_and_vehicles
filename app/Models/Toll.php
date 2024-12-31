@@ -14,6 +14,6 @@ class Toll extends Model
 
     public function vehicles()
     {
-        return $this->hasMany(Vehicle::class);
+        return $this->belongsToManyMany(Vehicle::class, "toll_vehicle");
     }
 }
