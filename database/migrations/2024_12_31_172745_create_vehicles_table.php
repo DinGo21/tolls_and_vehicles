@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("toll_id")->constrained("tolls")->onDelete("cascade");
             $table->string("type");
             $table->string("registration");
             $table->timestamps();
