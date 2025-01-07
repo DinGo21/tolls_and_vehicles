@@ -8,7 +8,8 @@ class Vehicle extends Model
 {
     protected $fillable = [
         "type",
-        "registration"
+        "registration",
+        "spent"
     ];
 
     public function tolls()

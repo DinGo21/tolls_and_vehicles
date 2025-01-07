@@ -30,7 +30,8 @@ class DatabaseSeeder extends Seeder
 
         Vehicle::create([
             "type" => "car",
-            "registration" => "X1296C2"
+            "registration" => "X1296C2",
+            "spent" => 0
         ]);
     }
 }
