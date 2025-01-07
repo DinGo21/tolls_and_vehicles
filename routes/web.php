@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\VehicleController;
+use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\TollController;
 use Illuminate\Support\Facades\Route;
 
