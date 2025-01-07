@@ -11,6 +11,6 @@ class TollController extends Controller
     {
         $tolls = Toll::all();
 
-        return view('index', compact("tolls"));
+        return view('tolls', compact("tolls"));
     }
 }
