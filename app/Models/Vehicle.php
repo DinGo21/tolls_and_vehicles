@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\VehicleType;
 use Illuminate\Database\Eloquent\Model;
 
 class Vehicle extends Model
@@ -11,6 +12,11 @@ class Vehicle extends Model
         "registration",
         "spent"
     ];
+
+    public function vehicleType()
+    {
+        return $this->belongsTo(VehicleType::class);
+    }
 
     public function tolls()
     {
