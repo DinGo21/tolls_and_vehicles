@@ -14,7 +14,7 @@
                         <p>{{$toll->name}}. {{$toll->city}}</p>
                     @endforeach
                     <h4>Spent</h4>
-                    <p>{{$vehicle->spent}}</p>
+                    <p>${{$vehicle->spent}}</p>
                 </div>
            </article>
         @endforeach
