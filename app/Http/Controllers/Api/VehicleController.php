@@ -8,10 +8,19 @@ use App\Http\Controllers\Controller;
 
 class VehicleController extends Controller
 {
-    public function attachToll(Request $request) : void
+    public function attachToll(Request $request)
     {
-        $vehicle = Vehicle::find($request->vehicleId);
+        return response()->json(["attach" => $request->attach], 200);
+    }
 
-        $vehicle->tolls()->attach([$request->tollId]);
+    public function store(Request $request)
+    {
+        $vehicle = Vehicle::create([
+            "type" => $request->type,
+            "registration" => $request->registration,
+            "spent" => 0
+        ]);
+        
+        return response()->json($vehicle, 200);
     }
 }
