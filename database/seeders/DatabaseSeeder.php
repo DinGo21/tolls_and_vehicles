@@ -59,7 +59,5 @@ class DatabaseSeeder extends Seeder
             "registration" => "X1296C2",
             "spent" => 0
         ]);
-
-        $vehicle->tolls()->attach([1]);
     }
 }

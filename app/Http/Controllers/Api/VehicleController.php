@@ -8,15 +8,27 @@ use App\Http\Controllers\Controller;
 
 class VehicleController extends Controller
 {
-    public function attachToll(Request $request)
+    public function goThroughToll(string $id, string $tollId)
     {
-        return response()->json(["attach" => $request->attach], 200);
+       $vehicle = Vehicle::find($id);
+       $vehicle->tolls()->attach([(int)$tollId]);
+       $toll = $vehicle->tolls()->find($tollId);
+
+       $vehicle->update(["spent" => $vehicle->spent + $vehicle->vehicleType->price]);
+       $toll->update(["earned" => $toll->earned + $vehicle->vehicleType->price]);
+
+       return response()->json([
+        "toll_name" => $toll->name, 
+        "toll_earned" => $toll->earned,
+        "vehicle_registration" => $vehicle->registration,
+        "vehicle_spent" => $vehicle->spent
+       ], 200);
     }
 
     public function store(Request $request)
     {
         $vehicle = Vehicle::create([
-            "type" => $request->type,
+            "vehicle_type_id" => $request->vehicle_type_id,
             "registration" => $request->registration,
             "spent" => 0
         ]);
