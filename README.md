@@ -15,7 +15,7 @@ __http://127.0.0.1:8000/api__
 }
 ```
 
-* To add a new vehicle use, the __/vehicles__ endpoint and fill the next properties:
+* To add a new vehicle, use the __/vehicles__ endpoint and fill the next properties:
 
 ```
 {
@@ -24,7 +24,7 @@ __http://127.0.0.1:8000/api__
 }
 ```
 
-* To make a vehicle go through a toll, use the the __/vehicles/{vehicleId}/tolls/{tollId}__ endpoint, adding the id for each corresponding element, for example:
+* To make a vehicle go through a toll, use the __/vehicles/{vehicleId}/tolls/{tollId}__ endpoint, adding the id for each corresponding element, for example:
 
 ```
 http://127.0.0.1:8000/api/vehicles/1/tolls/1
